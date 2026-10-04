@@ -1,0 +1,104 @@
+/* ===== Biến thiết kế: sửa ở đây thì cả giao diện đổi theo ===== */
+:root {
+  --app-width: 1200px;
+  --app-height: 800px;
+  --sidebar-width: 300px;
+  --chat-height: 640px;
+  --border-width: 4px;
+  --color-sidebar: #000000;
+  --color-border: #222222;
+  --color-bg: #ffffff;
+  --color-user: #d9ecff;
+  --color-ai: #eeeeee;
+}
+
+/* Quy tắc quan trọng: kích thước đã gồm cả viền và padding */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #cccccc;
+}
+
+/* ===== Khung ứng dụng: chia 2 cột (300px | phần còn lại) ===== */
+.app {
+  width: var(--app-width);
+  height: var(--app-height);
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  background: var(--color-bg);
+}
+
+/* ===== Cột đen bên trái ===== */
+.sidebar {
+  background: var(--color-sidebar);
+  color: #ffffff;
+  padding: 20px;
+}
+
+.sidebar__title {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.sidebar__hint {
+  margin: 0;
+  font-size: 13px;
+  color: #aaaaaa;
+}
+
+/* ===== Phần bên phải: chia 2 hàng (640px chat | phần còn lại) ===== */
+.main {
+  display: grid;
+  grid-template-rows: var(--chat-height) 1fr;
+}
+
+/* ===== Khung chat ===== */
+.chat {
+  border: var(--border-width) solid var(--color-border);
+  padding: 16px;
+  overflow-y: auto; /* tin nhắn nhiều thì cuộn, không tràn khung */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.message--user {
+  align-self: flex-end;
+  background: var(--color-user);
+}
+
+.message--ai {
+  align-self: flex-start;
+  background: var(--color-ai);
+}
+
+/* ===== Khu nhập tin nhắn ===== */
+.composer {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+}
+
+.composer__input {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.composer__send {
+  width: 90px;
+  font-size: 15px;
+  cursor: pointer;
+}

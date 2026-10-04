@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Roundtable</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Khung ứng dụng: 1200 x 800 -->
+  <div class="app">
+
+    <!-- Cột đen bên trái: rộng 300px, cao full -->
+    <aside class="sidebar">
+      <h1 class="sidebar__title">AI Roundtable</h1>
+      <p class="sidebar__hint">Khu vực này sau này chứa: danh sách AI, vai trò, cài đặt.</p>
+    </aside>
+
+    <!-- Phần bên phải: 900px -->
+    <main class="main">
+
+      <!-- Khung chat: 900 x 640, viền dày 4px -->
+      <section class="chat">
+        <div class="message message--user">Xin chào, bạn là ai?</div>
+        <div class="message message--ai">Chào bạn! (đây là tin nhắn mẫu để xem giao diện)</div>
+      </section>
+
+      <!-- Khu nhập tin nhắn: 900 x 160 -->
+      <section class="composer">
+        <textarea class="composer__input" placeholder="Nhập tin nhắn..."></textarea>
+        <button class="composer__send">Gửi</button>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
